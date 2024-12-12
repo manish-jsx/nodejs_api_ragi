@@ -1,0 +1,31 @@
+[
+  {
+    "id": "update-api",
+    "execute-command": "/home/ubuntu/nodejs_api_ragi/update.sh",
+    "command-working-directory": "/home/ubuntu/nodejs_api_ragi",
+    "trigger-rule": {
+      "and": [
+        {
+          "match": {
+            "type": "payload-hash-sha256",
+            "secret": "ragiji-api",
+            "parameter": {
+              "source": "header",
+              "name": "X-Hub-Signature-256"
+            }
+          }
+        },
+        {
+          "match": {
+            "type": "value",
+            "value": "refs/heads/main",
+            "parameter": {
+              "source": "payload",
+              "name": "ref"
+            }
+          }
+        }
+      ]
+    }
+  }
+]
