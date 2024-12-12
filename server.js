@@ -115,7 +115,33 @@ app.use("/api/blogs", blogRoutes);
 
 // Welcome Message Route
 app.get("/", (req, res) => {
-  res.send("Welcome to Ragiji Foundation API!");
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Welcome to Ragiji Foundation API</title>
+      <style>
+        body {
+          font-family: sans-serif;
+          background-color: #f0f0f0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+        h1 {
+          color: #333;
+          font-size: 2.5em;
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Welcome to Ragiji Foundation API!</h1>
+    </body>
+    </html>
+  `);
 });
 
 // Database Connection
