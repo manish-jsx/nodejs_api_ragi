@@ -17,4 +17,4 @@ npm install
 npx pm2 restart api
 
 # Optional: Log the update
-echo "Updated API at $(date)" >> update.log
+echo "Updated API at $(date)" >> /home/ubuntu/nodejs_api_ragi/update.log
